@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모든 소식 | 유림한의원</title>
+    <link rel="stylesheet" href="css/style.css?v=1.4">
+    <link rel="stylesheet" href="css/cause.css">
+    <meta name="description" content="유림한의원의 교통사고 치료 모든 소식을 확인하세요.">
+</head>
+
+<body>
+
+    <!-- Nav (Apple Style) -->
+    <nav class="global-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="유림한의원 로고" class="brand-logo"
+                    style="height: 32px; width: auto; margin-right: 8px; vertical-align: middle;">
+                포항 유림한의원
+            </a>
+            <div class="nav-links">
+                <a href="index.html">홈으로</a>
+                <a href="list.html?category=교통사고 상식">교통사고 상식</a>
+                <a href="list.html?category=교통사고 치료">교통사고 치료</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header style="padding: 8rem 0 2rem; background-color: var(--color-bg-alt); text-align: center;">
+        <div class="container scroll-fade">
+            <img src="images/logo.png" alt="Yurim Clinic Logo"
+                style="width: 80px; height: auto; margin-bottom: 2rem; opacity: 0.9; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 50%;">
+            <span class="typography-label">Archive</span>
+            <h1 class="typography-headline" style="font-size: 3.5rem;">유림 소식 및 건강 정보</h1>
+            <p class="typography-intro" style="margin-top: 1.5rem; opacity: 0.7;">
+                교통사고 치료와 회복에 필요한 다양한 전문 정보를 연재합니다.
+            </p>
+        </div>
+    </header>
+
+    <!-- Blog Archive Section -->
+    <section class="section-light" id="blog-archive"
+        style="min-height: 80vh; padding-top: 2rem; padding-bottom: 10rem;">
+        <div class="container">
+            <div id="archive-container" class="bento-grid">
+                <!-- Posts will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 100px 0 50px; background: #ffffff; text-align: center; border-top: 1px solid #f2f2f2;">
+        <p style="color: #1d1d1f; font-weight: 600; font-size: 1.2rem;">포항 유림한의원</p>
+        <p style="margin-top:10px; color: #86868b; font-size: 0.9rem;">© 2025 Yurim Clinic. All rights reserved.</p>
+        <p style="margin-top:10px;"> 경북 포항시 남구 오천읍 정몽주로 539 | Tel. 054-291-9975</p>
+    </footer>
+
+    <!-- Floating Buttons Stack -->
+    <div class="floating-actions">
+        <a href="tel:054-291-9975" class="floating-btn btn-call" data-label="전화상담">
+            <svg class="icon-phone-svg" viewBox="0 0 24 24">
+                <path
+                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24a11.36 11.36 0 003.58.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.58.11.35.03.74-.24 1.02l-2.2 2.2z" />
+            </svg>
+        </a>
+        <a href="http://pf.kakao.com/_qyxodxb/chat" target="_blank" class="floating-btn btn-kakao" data-label="문의하기">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/KakaoTalk_logo.svg" alt="Kakao">
+        </a>
+        <a href="https://talk.naver.com/WC4VBP" target="_blank" class="floating-btn btn-naver" data-label="네이버 톡톡">
+            <svg class="icon-naver-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M6 3H18C19.6569 3 21 4.34315 21 6V15C21 16.6569 19.6569 18 18 18H8.5L4.5 21L4.5 6C4.5 4.34315 5.84315 3 6 3ZM9.5 8C8.94772 8 8.5 8.44772 8.5 9V12C8.5 12.5523 8.94772 13 9.5 13C10.0523 13 10.5 12.5523 10.5 12V9C10.5 8.44772 10.0523 8 9.5 8ZM14.5 8C13.9477 8 13.5 8.44772 13.5 9V12C13.5 12.5523 13.9477 13 14.5 13C15.0523 13 15.5 12.5523 15.5 12V9C15.5 8.44772 15.0523 8 14.5 8Z"
+                    fill="white" />
+            </svg>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/list.js"></script>
+</body>
+
+</html>

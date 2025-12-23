@@ -1,0 +1,119 @@
+/* Cause Explanation Section - Dark Mode */
+.cause-section {
+    padding: 10rem 0;
+    background-color: var(--color-bg-alt);
+    /* Dark Grey */
+}
+
+.cause-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    /* More space for drama */
+    margin-top: 5rem;
+}
+
+.cause-item {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+    background: transparent;
+    /* Remove white box */
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: none;
+    border: none;
+}
+
+.cause-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cause-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.cause-image-wrapper {
+    flex: 0 0 50%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    height: 350px;
+    /* Fixed height for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    /* White background for transparent/contain images */
+}
+
+.cause-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensure full medical diagrams are visible */
+    display: block;
+    transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    padding: 20px;
+    /* Consistent internal spacing */
+}
+
+/* For photos that should fill the area */
+.cause-image[src*="mri_cause"] {
+    object-fit: cover;
+    padding: 0;
+}
+
+.cause-image:hover {
+    transform: scale(1.05);
+}
+
+.cause-text {
+    flex: 1;
+}
+
+.cause-text h3 {
+    font-size: 3rem;
+    /* Larger, Apple style */
+    color: #f5f5f7;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.cause-text p {
+    font-size: 1.5rem;
+    /* Larger readable text */
+    color: #a1a1a6;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.cause-highlight {
+    color: #2997ff;
+    /* Blue highlight */
+    font-weight: 600;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .cause-item {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .cause-item.reverse {
+        flex-direction: column;
+    }
+
+    .cause-text h3 {
+        font-size: 2rem;
+    }
+}

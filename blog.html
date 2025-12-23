@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유림 소식 | 포항 유림한의원</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 120px auto 100px;
+            padding: 0 20px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .blog-meta {
+            color: #86868b;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            word-break: keep-all;
+        }
+
+        .blog-full-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--color-text-body);
+            white-space: pre-wrap;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 3rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="global-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">포항 유림한의원</a>
+            <div class="nav-links">
+                <a href="index.html">홈으로</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <a href="index.html#blog" class="back-button">← 목록으로 돌아가기</a>
+        <div id="blog-content">
+            <!-- Content will be injected by blog.js -->
+            <div class="blog-header">
+                <p class="blog-meta">Loading...</p>
+                <h1 class="blog-title">불러오는 중입니다...</h1>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background:#1d1d1f; color:#86868b; padding: 4rem 0; text-align:center; font-size: 12px;">
+        <p>Copyright © 2024 유림한의원. All rights reserved.</p>
+        <p style="margin-top:10px;"> 경북 포항시 남구 오천읍 정몽주로 539 | Tel. 054-291-9975</p>
+    </footer>
+
+    <!-- Floating Buttons Stack -->
+    <div class="floating-actions">
+        <a href="tel:054-291-9975" class="floating-btn btn-call" data-label="전화상담">
+            <svg class="icon-phone-svg" viewBox="0 0 24 24">
+                <path
+                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24a11.36 11.36 0 003.58.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.58.11.35.03.74-.24 1.02l-2.2 2.2z" />
+            </svg>
+        </a>
+        <a href="http://pf.kakao.com/_qyxodxb/chat" target="_blank" class="floating-btn btn-kakao" data-label="문의하기">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/KakaoTalk_logo.svg" alt="Kakao">
+        </a>
+        <a href="https://talk.naver.com/WC4VBP" target="_blank" class="floating-btn btn-naver" data-label="네이버 톡톡">
+            <svg class="icon-naver-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M6 3H18C19.6569 3 21 4.34315 21 6V15C21 16.6569 19.6569 18 18 18H8.5L4.5 21L4.5 6C4.5 4.34315 5.84315 3 6 3ZM9.5 8C8.94772 8 8.5 8.44772 8.5 9V12C8.5 12.5523 8.94772 13 9.5 13C10.0523 13 10.5 12.5523 10.5 12V9C10.5 8.44772 10.0523 8 9.5 8ZM14.5 8C13.9477 8 13.5 8.44772 13.5 9V12C13.5 12.5523 13.9477 13 14.5 13C15.0523 13 15.5 12.5523 15.5 12V9C15.5 8.44772 15.0523 8 14.5 8Z"
+                    fill="white" />
+            </svg>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+
+</html>
