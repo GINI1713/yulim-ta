@@ -1,0 +1,1465 @@
+/* Apple Style Design System - Light Theme */
+:root {
+    --color-bg-body: #ffffff;
+    --color-bg-alt: #f5f5f7;
+    /* Light Grey for alternate sections */
+    --color-bg-card: #ffffff;
+
+    --color-text-headline: #1d1d1f;
+    --color-text-body: #424245;
+    /* Apple grey text */
+    --color-text-dark: #1d1d1f;
+
+    --color-accent: #0071e3;
+    /* Apple Blue (slightly darker for light mode) */
+    --color-accent-light: rgba(0, 113, 227, 0.1);
+
+    --color-nav-bg: rgba(255, 255, 255, 0.7);
+    --color-border: rgba(0, 0, 0, 0.1);
+
+    /* Typography - Premium & Readable */
+    --font-main: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-size-headline: 4rem;
+    --font-size-subhead: 1.5rem;
+    --font-size-body: 1.125rem;
+
+    --container-width: 1080px;
+    --spacing-section: 5.5rem;
+    --ease-apple: cubic-bezier(0.4, 0, 0.6, 1);
+
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Soft shadow for cards */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background-color: var(--color-bg-body);
+    color: var(--color-text-body);
+    font-family: var(--font-main);
+    margin: 0;
+    line-height: 1.6;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text-headline);
+}
+
+.typography-hero {
+    font-size: 5rem;
+    line-height: 1.05;
+    background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
+    /* Dark gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typography-headline {
+    color: var(--color-text-headline);
+}
+
+.typography-intro {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--color-text-body);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.typography-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #86868b;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Navigation - Light Premium */
+.global-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    color: var(--color-text-headline);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    /* Prevent "포항 유림한의원" from wrapping */
+}
+
+.brand-logo {
+    height: 40px;
+    /* Increased from 32px for better readability */
+    width: auto;
+    border-radius: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--color-text-body);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-left: 30px;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Hero Section - Product Showcase Style */
+.hero-section {
+    padding-top: 120px;
+    /* Reduced from 150px to pull content up */
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-bg-body);
+    position: relative;
+    overflow: clip;
+    /* Ensure no scrollbars from parallax */
+}
+
+.hero-text-container {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    /* Reduced from 4rem to pull image up */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+    /* Ensure text stays above image when scrolling */
+}
+
+
+.hero-image-wrapper {
+    width: 100%;
+    max-width: none;
+    /* Force full screen width */
+    border-radius: 0;
+    /* Remove rounded corners for edge-to-edge finish */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    line-height: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* transition: opacity 0.3s ease-out; Removed to let JS handle it smoothly */
+}
+
+/* Sections */
+.section-dark {
+    padding: var(--spacing-section) 0;
+    background-color: var(--color-bg-body);
+    color: var(--color-text-headline);
+}
+
+/* Alternate Section Background (Dark Grey) */
+/* Process Section Enhancement */
+#process {
+    background-image: url('../images/process_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
+    position: relative;
+    overflow: hidden;
+}
+
+#process::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    /* Soft white overlay */
+    z-index: 1;
+}
+
+#process .container {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    #process {
+        background-attachment: scroll;
+        /* Disable fixed bg on mobile for better performance */
+    }
+}
+
+.section-alt {
+    padding: var(--spacing-section) 0;
+    background-color: var(--color-bg-alt);
+    color: var(--color-text-headline);
+}
+
+.section-light .typography-headline {
+    color: var(--color-text-dark);
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 4rem 0;
+}
+
+.bento-card {
+    background: var(--color-bg-card);
+    padding: 30px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+    transition: transform 0.5s var(--ease-apple), box-shadow 0.5s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    /* Pronounced floating shadow */
+    border: none;
+    /* Removed border as requested */
+    /* Subtle border removed */
+}
+
+.section-light .bento-card {
+    background: #ffffff;
+    box-shadow: var(--shadow-card);
+}
+
+.bento-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+}
+
+.card-herbal {
+    background-image: url('../images/herbal_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* About Yurim Section Cards */
+.card-night-care {
+    background-image: url('../images/yurim_ultrasound.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-holiday-care {
+    background-image: url('../images/yurim_inpatient_holiday.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-parking {
+    background-image: url('../images/yurim_parking_valet.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-brewing-detail {
+    background-image: url('../images/yurim_brewing_real.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-card {
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    /* Default for dark overlays */
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Darker overlay for better contrast on white images */
+    z-index: 1;
+}
+
+.about-card .card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.about-card h3 {
+    color: #ffffff !important;
+}
+
+/* Grey icon override for Clinic Identity section */
+.about-card .card-icon {
+    background: none;
+    -webkit-text-fill-color: #a1a1a6;
+    color: #a1a1a6;
+}
+
+.about-card p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.card-reception {
+    background-image: url('../images/consultation_form.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-reception::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    /* Light overlay */
+    z-index: 1;
+}
+
+.card-reception .card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-inpatient {
+    background-image: url('../images/inpatient_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-pharmaco {
+    background-image: url('../images/pharmaco_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-physio {
+    background-image: url('../images/physio_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-acupuncture {
+    background-image: url('../images/acupuncture_bg.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-cupping {
+    background-image: url('../images/cupping_moxibustion_real.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Common Overlay Style for Image Cards */
+.card-herbal::before,
+.card-inpatient::before,
+.card-pharmaco::before,
+.card-physio::before,
+.card-acupuncture::before,
+.card-cupping::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    /* Increased opacity to normalize various background brightness levels */
+    z-index: 1;
+}
+
+/* Removed redundant .card-pharmaco::before */
+
+.card-herbal .card-content,
+.card-inpatient .card-content,
+.card-pharmaco .card-content,
+.card-physio .card-content,
+.card-acupuncture .card-content,
+.card-cupping .card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.bento-card.large {
+    grid-column: span 2;
+}
+
+/* Warning Card Styles */
+.warning-card {
+    border-top: 4px solid #d2d2d7;
+    transition: transform 0.6s var(--ease-apple), box-shadow 0.6s ease;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.warning-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    /* Light overlay for legibility */
+    z-index: 1;
+}
+
+.card-pain {
+    background-image: url('../images/warning_pain_new.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Grayscale effect for the specific background image without affecting text */
+.card-pain::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: grayscale(100%);
+    z-index: 1;
+    /* Below the overlay but above the background */
+}
+
+/* Ensure the light overlay stays on top of the grayscale image */
+.card-pain::before {
+    z-index: 2;
+}
+
+/* Ensure content stays on top of everything */
+.card-pain .card-content {
+    position: relative;
+    z-index: 3;
+}
+
+.card-stiffness {
+    background-image: url('../images/warning_stiffness_new.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Grayscale effect pattern for warning cards */
+.card-stiffness::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
+.card-stiffness::before {
+    z-index: 2;
+}
+
+.card-stiffness .card-content {
+    position: relative;
+    z-index: 3;
+}
+
+.card-chronic {
+    background-image: url('../images/warning_chronic_new_v2.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-chronic::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
+.card-chronic::before {
+    z-index: 2;
+}
+
+.card-chronic .card-content {
+    position: relative;
+    z-index: 3;
+}
+
+.card-qol {
+    background-image: url('../images/warning_qol_new.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-qol::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
+.card-qol::before {
+    z-index: 2;
+}
+
+.card-qol .card-content {
+    position: relative;
+    z-index: 3;
+}
+
+.warning-card .card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.warning-card .card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: none;
+    -webkit-text-fill-color: initial;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    /* Slightly reduce opacity for better blending */
+}
+
+.card-content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.warning-card .card-content h3 {
+    color: #ffffff !important;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+    /* Ensure readability */
+}
+
+.card-content p {
+    color: var(--color-text-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Darker text for cards with image backgrounds */
+.card-herbal .card-content h3,
+.card-inpatient .card-content h3,
+.card-pharmaco .card-content h3,
+.card-physio .card-content h3,
+.card-acupuncture .card-content h3,
+.card-cupping .card-content h3 {
+    color: #515154 !important;
+    font-weight: 800;
+}
+
+.card-herbal .card-content p,
+.card-inpatient .card-content p,
+.card-pharmaco .card-content p,
+.card-physio .card-content p,
+.card-acupuncture .card-content p,
+.card-cupping .card-content p {
+    color: #000000;
+    /* Max contrast */
+    font-weight: 600;
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: auto;
+    background: linear-gradient(135deg, #2997ff, #7b5aff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Button - Apple Style Blue */
+.btn-primary {
+    display: inline-block;
+    background-color: #2997ff;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 980px;
+    /* Pill shape is more Apple */
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px rgba(41, 151, 255, 0.4);
+    /* Glow effect */
+    margin-top: 2rem;
+}
+
+.btn-primary:hover {
+    background-color: #0071e3;
+    transform: scale(1.05);
+    /* Dynamic scale */
+    box-shadow: 0 0 40px rgba(41, 151, 255, 0.6);
+}
+
+.btn-kakao {
+    background-color: #FEE500;
+    color: #000000;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s var(--ease-apple);
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(254, 229, 0, 0.3);
+}
+
+.btn-kakao:hover {
+    background-color: #fada00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(254, 229, 0, 0.5);
+}
+
+/* Process Timeline (Refined) */
+.timeline-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.timeline-row::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    /* Adjust based on icon size */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #d2d2d7;
+    z-index: 0;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: var(--color-bg-body);
+    /* Mask line */
+    padding: 0 10px;
+    width: 25%;
+}
+
+.step-circle {
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    color: var(--color-accent);
+    border: 1px solid rgba(41, 151, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 0 20px rgba(41, 151, 255, 0.1);
+}
+
+/* Animations */
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-reveal-down {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-zoom-in {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-fade.visible,
+.scroll-scale.visible,
+.scroll-reveal-left.visible,
+.scroll-reveal-right.visible,
+.scroll-reveal-down.visible,
+.scroll-zoom-in.visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+@media (max-width: 768px) {
+    .typography-hero {
+        font-size: 3rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-card.large {
+        grid-column: span 1;
+    }
+
+    .timeline-row {
+        flex-direction: column;
+    }
+
+    .timeline-row::before {
+        display: none;
+    }
+
+    .timeline-step {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Symptom Hook Section */
+.symptom-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: left;
+}
+
+.symptom-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.symptom-item:last-child {
+    border-bottom: none;
+}
+
+.check-icon {
+    font-size: 2rem;
+    color: var(--color-accent);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.typography-question {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    line-height: 1.3;
+}
+
+/* Staggered Delays for scroll-fade */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+.delay-400 {
+    transition-delay: 0.4s;
+}
+
+.delay-500 {
+    transition-delay: 0.5s;
+}
+
+.delay-600 {
+    transition-delay: 0.6s;
+}
+
+.delay-700 {
+    transition-delay: 0.7s;
+}
+
+.delay-800 {
+    transition-delay: 0.8s;
+}
+
+.parallax-target {
+    will-change: transform;
+}
+
+/* Contact Section Styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: var(--color-text-headline);
+    margin-bottom: 1rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    color: var(--color-text-body);
+    line-height: 2;
+    padding: 0;
+}
+
+.map-wrapper {
+    border-radius: 24px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    background: #e5e5ea;
+}
+
+/* Headache Message Section */
+.headache-section {
+    padding: 10rem 0;
+    background-color: var(--color-bg-body);
+}
+
+.headache-content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.headache-image-wrapper {
+    flex: 0 0 50%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+}
+
+.headache-image {
+    width: 100%;
+    display: block;
+    transition: transform 1s ease;
+}
+
+.headache-image-wrapper:hover .headache-image {
+    transform: scale(1.05);
+}
+
+.headache-text {
+    flex: 1;
+}
+
+.headache-text h2 {
+    font-size: 2.25rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+
+.headache-description {
+    font-size: var(--font-size-body);
+    color: var(--color-text-body);
+    line-height: 1.8;
+}
+
+.headache-description p {
+    margin-bottom: 1.5rem;
+}
+
+.headache-description strong {
+    color: var(--color-text-headline);
+    display: block;
+    margin-top: 2.5rem;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 991px) {
+    .headache-content {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .headache-text h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Blog Styles */
+.blog-card {
+    background: var(--color-bg-card);
+    border-radius: 24px;
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #f5f5f7;
+}
+
+.blog-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.blog-card:hover .blog-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.blog-card .card-content {
+    padding: 2.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-accent);
+}
+
+.blog-category {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: rgba(0, 122, 255, 0.05);
+    border-radius: 100px;
+}
+
+.blog-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    color: var(--color-text-headline);
+}
+
+.blog-card p {
+    color: var(--color-text-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.blog-date {
+    font-size: 0.85rem;
+    color: #86868b;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 3rem;
+    border-radius: 32px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    animation: modal-fade-in 0.5s ease;
+}
+
+@keyframes modal-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #86868b;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-secondary {
+    background: #f5f5f7;
+    color: #1d1d1f;
+    padding: 1rem 2.4rem;
+    border-radius: 100px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f5f5f7;
+}
+
+.admin-post-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-edit {
+    background: #34c759;
+    color: white;
+    border: none;
+}
+
+.btn-delete {
+    background: #ff3b30;
+    color: white;
+    border: none;
+}
+
+/* Floating Action Buttons */
+.floating-actions {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Slightly tighter gap */
+    z-index: 1000;
+}
+
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    /* Force perfect square */
+    min-height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: all 0.4s var(--ease-apple);
+    text-decoration: none;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    border-radius: 50%;
+    /* Changed to perfect circle */
+    background-color: #ffffff;
+}
+
+/* Kakao Style */
+.btn-kakao {
+    animation: fadeInFloating 0.8s var(--ease-apple) 1.5s forwards;
+}
+
+.floating-btn.btn-kakao {
+    padding: 0;
+    background-color: #FEE500;
+    /* Match Kakao yellow */
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Naver Style */
+.btn-naver {
+    animation: fadeInFloating 0.8s var(--ease-apple) 1.8s forwards;
+}
+
+.floating-btn.btn-naver {
+    padding: 0;
+    background-color: #03C75A;
+    /* Naver Green */
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.icon-naver-svg {
+    width: 30px;
+    /* Adjusted size (smaller than 38px) */
+    height: 30px;
+    fill: white;
+}
+
+/* Call Style */
+.btn-call {
+    animation: fadeInFloating 0.8s var(--ease-apple) 1.2s forwards;
+    background-color: #007aff !important;
+    /* Blue background for call */
+}
+
+@keyframes fadeInFloating {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.floating-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.floating-btn.btn-kakao {
+    background-color: #FEE500 !important;
+}
+
+.floating-btn.btn-kakao img {
+    transform: scale(1.0);
+    /* Original size for the clean, well-proportioned source */
+    /* Slightly increased for better visibility */
+}
+
+/* SVG Phone Icon */
+.icon-phone-svg {
+    width: 28px;
+    /* Slightly smaller for better centering in circle */
+    height: 28px;
+    fill: #ffffff;
+    /* White icon on blue background */
+}
+
+.icon-phone {
+    fill: #007aff;
+    /* Use primary blue for the phone icon inside white circle */
+}
+
+/* Tooltip/Label */
+.floating-btn::after {
+    content: attr(data-label);
+    position: absolute;
+    right: 75px;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s var(--ease-apple);
+    pointer-events: none;
+}
+
+.floating-btn:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .floating-actions {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+
+    /* Mobile refinements for Bento Grid and Warning Cards */
+    .bento-grid {
+        gap: 1rem;
+    }
+
+    .bento-card,
+    .warning-card {
+        padding: 1.5rem;
+    }
+
+    .warning-card .card-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .warning-card .card-content p {
+        font-size: 1rem;
+    }
+
+    .warning-card .card-icon {
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .floating-btn {
+        width: 54px;
+        height: 54px;
+    }
+
+    .floating-btn::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile Contact Section */
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+
+    .map-wrapper {
+        height: 300px !important;
+        /* Smaller map on mobile */
+    }
+
+    .contact-info {
+        text-align: center;
+        /* Center align info on mobile */
+    }
+
+    .contact-info ul {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+/* CTA Banner Styling */
+.cta-banner {
+    display: block;
+    background: #f5f5f7;
+    /* More distinct background color */
+    padding: 4rem 2rem;
+    border-radius: 32px;
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* Stronger border */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    margin: 3rem auto;
+    /* Center the banner itself */
+    max-width: 600px;
+    /* Prevent it from being too wide */
+}
+
+.cta-banner:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 122, 255, 0.2);
+    background: #ffffff;
+}
+
+.cta-banner h3 {
+    font-size: 2rem;
+    color: var(--color-text-headline);
+    font-weight: 700;
+    margin: 0 auto 1rem auto;
+    /* Center block if width constrained */
+    text-align: center;
+    /* Force center text */
+    letter-spacing: -0.02em;
+}
+
+.cta-banner .cta-subtext {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.cta-banner:hover .cta-subtext {
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .cta-banner {
+        padding: 3rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .cta-banner h3 {
+        font-size: 1.5rem;
+    }
+}
