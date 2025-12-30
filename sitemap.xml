@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://yulim-ta.vercel.app/</loc>
+  <lastmod>2025-12-30T07:04:29+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://yulim-ta.vercel.app/list.html</loc>
+  <lastmod>2025-12-30T07:04:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://yulim-ta.vercel.app/index.html</loc>
+  <lastmod>2025-12-30T07:04:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://yulim-ta.vercel.app/list.html?category=%EA%B5%90%ED%86%B5%EC%82%AC%EA%B3%A0%20%EC%83%81%EC%8B%9D</loc>
+  <lastmod>2025-12-30T07:04:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://yulim-ta.vercel.app/list.html?category=%EA%B5%90%ED%86%B5%EC%82%AC%EA%B3%A0%20%EC%B9%98%EB%A3%8C</loc>
+  <lastmod>2025-12-30T07:04:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
