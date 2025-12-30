@@ -192,10 +192,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Admin Password
+    const ADMIN_PASSWORD = 'jinhee';
+
     if (adminTrigger) {
         adminTrigger.addEventListener('click', () => {
-            adminModal.style.display = 'block';
-            renderAdminPosts();
+            const enteredPassword = prompt('관리자 비밀번호를 입력하세요:');
+            if (enteredPassword === ADMIN_PASSWORD) {
+                adminModal.style.display = 'block';
+                renderAdminPosts();
+            } else if (enteredPassword !== null) {
+                alert('비밀번호가 틀렸습니다.');
+            }
         });
     }
 
