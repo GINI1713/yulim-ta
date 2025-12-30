@@ -1463,3 +1463,14 @@ h3 {
         font-size: 1.5rem;
     }
 }
+/* Page Title Responsive */
+.page-title {
+    font-size: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.6rem; /* Adjusted to fit one line on mobile */
+        white-space: nowrap;
+    }
+}
