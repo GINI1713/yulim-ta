@@ -1,3 +1,50 @@
+// Simple Markdown to HTML converter
+function markdownToHtml(text) {
+    if (!text) return '';
+
+    let html = text;
+
+    // Escape HTML first (prevent XSS)
+    html = html.replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+    // Headers (### before ## before #)
+    html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+    html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+    html = html.replace(/^# (.+)$/gm, '<h1 style="font-size: 1.8rem; margin: 2rem 0 1rem;">$1</h1>');
+
+    // Bold (**text** or __text__)
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+
+    // Italic (*text* or _text_)
+    html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+
+    // Strikethrough (~~text~~)
+    html = html.replace(/~~(.+?)~~/g, '<del>$1</del>');
+
+    // Unordered lists (- item or * item)
+    html = html.replace(/^[\-\*] (.+)$/gm, '<li>$1</li>');
+    html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul style="margin: 1rem 0; padding-left: 1.5rem;">$&</ul>');
+
+    // Ordered lists (1. item)
+    html = html.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
+
+    // Horizontal rule (---)
+    html = html.replace(/^---$/gm, '<hr style="margin: 2rem 0; border: none; border-top: 1px solid #eee;">');
+
+    // Line breaks
+    html = html.replace(/\n/g, '<br>');
+
+    // Clean up extra <br> after block elements
+    html = html.replace(/<\/(h1|h2|h3|ul|ol|li|hr)><br>/g, '</$1>');
+    html = html.replace(/<br><(h1|h2|h3|ul|ol)/g, '<$1');
+
+    return html;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     const blogContent = document.getElementById('blog-content');
     const params = new URLSearchParams(window.location.search);
@@ -39,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>` : ''}
                 
                 <div class="blog-full-content">
-                    ${(post.content || post.excerpt).replace(/\n/g, '<br>')}
+                    ${markdownToHtml(post.content || post.excerpt)}
                 </div>
 
                 <div style="margin-top: 4rem; display: flex; gap: 1rem;">
