@@ -100,12 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagePreview = document.getElementById('image-preview');
     let currentImageBase64 = '';
 
-    // Fetch Posts from Supabase
+    // Fetch Posts from Supabase (교통사고, 한의원소식 카테고리만)
     async function fetchPosts() {
         try {
             const { data, error } = await supabaseClient
                 .from('posts')
                 .select('*')
+                .in('category', ['교통사고', '한의원소식'])
                 .order('is_pinned', { ascending: false })
                 .order('created_at', { ascending: false });
 

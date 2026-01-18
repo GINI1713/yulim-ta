@@ -807,8 +807,34 @@ h3 {
 }
 
 @media (max-width: 768px) {
+
+    /* Hero & Headlines - Reduced for better mobile balance */
     .typography-hero {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        line-height: 1.15;
+    }
+
+    .typography-intro {
+        font-size: 1.15rem;
+        line-height: 1.6;
+    }
+
+    .typography-headline {
+        font-size: 1.8rem;
+    }
+
+    .typography-question {
+        font-size: 1.35rem;
+        line-height: 1.4;
+    }
+
+    /* Card Content - Tighter spacing */
+    .card-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .card-content p {
+        font-size: 1rem;
     }
 
     .bento-grid {
@@ -830,6 +856,22 @@ h3 {
     .timeline-step {
         width: 100%;
         margin-bottom: 2rem;
+    }
+
+    /* Section headings */
+    h2.typography-headline {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Symptom list items */
+    .symptom-item {
+        padding: 1.5rem 0;
+        gap: 1rem;
+    }
+
+    .check-icon {
+        font-size: 1.5rem;
     }
 }
 
@@ -865,6 +907,13 @@ h3 {
     font-weight: 600;
     color: var(--color-text-dark);
     line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+    .typography-question {
+        font-size: 1.35rem;
+        line-height: 1.4;
+    }
 }
 
 /* Staggered Delays for scroll-fade */
@@ -997,7 +1046,16 @@ h3 {
     }
 
     .headache-text h2 {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
+        line-height: 1.35;
+    }
+
+    .headache-description {
+        font-size: 1rem;
+    }
+
+    .headache-description strong {
+        font-size: 1.1rem;
     }
 }
 
@@ -1463,6 +1521,7 @@ h3 {
         font-size: 1.5rem;
     }
 }
+
 /* Page Title Responsive */
 .page-title {
     font-size: 3.5rem;
@@ -1470,7 +1529,8 @@ h3 {
 
 @media (max-width: 768px) {
     .page-title {
-        font-size: 1.6rem; /* Adjusted to fit one line on mobile */
+        font-size: 1.6rem;
+        /* Adjusted to fit one line on mobile */
         white-space: nowrap;
     }
 }

@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const archiveContainer = document.getElementById('archive-container');
 
-    // Fetch All Posts from Supabase
+    // Fetch Posts from Supabase (교통사고, 한의원소식 카테고리만)
     async function fetchPosts() {
         try {
             const { data, error } = await supabaseClient
                 .from('posts')
                 .select('*')
+                .in('category', ['교통사고', '한의원소식'])
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
